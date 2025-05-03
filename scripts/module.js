@@ -3,7 +3,7 @@ import { MovementSettingsData } from "./data-store.js";
 const dataStoresMap = new Map();
 
 Hooks.on("ready", function () {
-  games.scenes.forEach((scene) =>
+  game.scenes.forEach((scene) =>
     dataStoresMap.set(scene.id, new MovementSettingsData(scene))
   );
   console.log(dataStoresMap);
