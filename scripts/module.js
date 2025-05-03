@@ -1,13 +1,17 @@
-console.log("Hello World! This code runs immediately when the file is loaded.");
+import { MovementSettingsData } from "./data-store";
 
-Hooks.on("init", function () {
-  console.log(
-    "This code runs once the Foundry VTT software begins its initialization workflow."
-  );
-});
+const dataStoresMap = new Map();
 
 Hooks.on("ready", function () {
-  console.log(
-    "This code runs once core initialization is ready and game data is available."
+  games.scenes.forEach((scene) =>
+    dataStoresMap.set(scene.id, new MovementSettingsData(scene))
   );
+  console.log(dataStoresMap);
 });
+
+// TODO Inject html to open movement settings config. In scene context menu or scene config dialog?
+// TODO Create FormApplication for filling out settings
+// TODO Use libWrapper to override Token._canDrag based on configured scene setting
+// TODO figure out how to modify how much a token moves when using arrow keys
+// TODO override grid.getShiftedPoint to calculate the movement relative to grid size
+// TODO allow movement outside grid-snapping? is this how gridless works already? Look into why gridless can sometimes move the player into wierd positions
