@@ -1,6 +1,6 @@
 import { CONSTANTS } from "./constants.js";
 
-class MovementSettingsData {
+export class MovementSettingsData {
   #scene;
 
   constructor(scene) {
