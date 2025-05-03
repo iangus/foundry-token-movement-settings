@@ -1,4 +1,4 @@
-import { MovementSettingsData } from "./data-store";
+import { MovementSettingsData } from "./data-store.js";
 
 const dataStoresMap = new Map();
 
