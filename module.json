@@ -19,7 +19,12 @@
     "systems": [],
     "requires": []
   },
-  "esmodules": ["scripts/module.js"],
+  "esmodules": [
+    "scripts/module.js",
+    "scripts/data-store.js",
+    "scripts/constants.js",
+    "scripts/form-application.js"
+  ],
   "scripts": [],
   "styles": [],
   "languages": [
