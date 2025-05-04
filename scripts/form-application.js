@@ -22,8 +22,6 @@ export class MovementSettingsConfig extends FormApplication {
    * @override
    */
   getData(options) {
-    return {
-      settings: options.settingsData.getSettings(),
-    };
+    return options.settingsData.getSettings();
   }
 }
