@@ -46,7 +46,6 @@ Hooks.on("deleteScene", (scene) => {
   dataStoresMap.delete(scene.id);
 });
 
-// TODO Create FormApplication for filling out settings
 // TODO Use libWrapper to override Token._canDrag based on configured scene setting
 // TODO figure out how to modify how much a token moves when using arrow keys
 // TODO override grid.getShiftedPoint to calculate the movement relative to grid size
