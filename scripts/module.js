@@ -1,6 +1,12 @@
 import { MovementSettingsData } from "./data-store.js";
+import { MovementSettingsConfig } from "./form-application.js";
 
 const dataStoresMap = new Map();
+let settingsConfigForm;
+
+Hooks.on("init", () => {
+  settingsConfigForm = new MovementSettingsConfig();
+});
 
 Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
   contextOptions.push({
@@ -8,7 +14,20 @@ Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
     icon: "<i class='fas fa-cogs fa-fw'></i>",
     classes: "",
     group: "",
-    callback: (...args) => console.log("Configure Movement", args),
+    callback: (target) => {
+      const { documentId } = target.data();
+      const settingsData = dataStoresMap.get(documentId);
+
+      if (!settingsData) {
+        console.error(
+          "Failed to find MovementSettingsData for document:",
+          documentId
+        );
+        return;
+      }
+
+      settingsConfigForm.render(true, { settingsData });
+    },
     condition: game.user.isGM,
   });
 });

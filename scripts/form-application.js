@@ -1,0 +1,29 @@
+import { CONSTANTS } from "./constants.js";
+
+class MovementSettingsConfig extends FormApplication {
+  static get defaultOptions() {
+    const overrides = {
+      height: "auto",
+      id: "movement-settings",
+      template: CONSTANTS.TEMPLATE,
+      title: "Scene Movement Settings",
+      settingsData: null,
+    };
+
+    const mergedOptions = foundry.utils.mergeObject(
+      super.defaultOptions,
+      overrides
+    );
+
+    return mergedOptions;
+  }
+
+  /**
+   * @override
+   */
+  getData(options) {
+    return {
+      settings: options.settingsData.getSettings(),
+    };
+  }
+}
