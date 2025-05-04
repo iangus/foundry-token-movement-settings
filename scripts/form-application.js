@@ -1,6 +1,6 @@
 import { CONSTANTS } from "./constants.js";
 
-class MovementSettingsConfig extends FormApplication {
+export class MovementSettingsConfig extends FormApplication {
   static get defaultOptions() {
     const overrides = {
       height: "auto",
