@@ -22,7 +22,8 @@
   "esmodules": [
     "scripts/module.js",
     "scripts/data-store.js",
-    "scripts/constants.js"
+    "scripts/constants.js",
+    "scripts/form-application.js"
   ],
   "scripts": [],
   "styles": [],
