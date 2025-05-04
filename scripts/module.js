@@ -2,6 +2,17 @@ import { MovementSettingsData } from "./data-store.js";
 
 const dataStoresMap = new Map();
 
+Hooks.on("getSceneNavigationContext", (_, contextOptions) => {
+  contextOptions.push({
+    name: "Configure Movement",
+    icon: "",
+    classes: "",
+    group: "",
+    callback: (...args) => console.log("Configure Movement", args),
+    condition: true,
+  });
+});
+
 Hooks.on("ready", () => {
   game.scenes.forEach((scene) =>
     dataStoresMap.set(scene.id, new MovementSettingsData(scene))
@@ -11,6 +22,10 @@ Hooks.on("ready", () => {
 
 Hooks.on("createScene", (scene) => {
   dataStoresMap.set(scene.id, new MovementSettingsData(scene));
+});
+
+Hooks.on("deleteScene", (scene) => {
+  dataStoresMap.delete(scene.id);
 });
 
 // TODO Inject html to open movement settings config. In scene context menu or scene config dialog?
