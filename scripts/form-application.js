@@ -30,6 +30,8 @@ export class MovementSettingsConfig extends FormApplication {
    * @override
    */
   async _updateObject(_, formData) {
-    console.log(formData);
+    await this.options.settingsData.updateSettings(formData);
+
+    this.render();
   }
 }
