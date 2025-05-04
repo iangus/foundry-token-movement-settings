@@ -5,10 +5,23 @@ export class MovementSettingsData {
 
   constructor(scene) {
     this.#scene = scene;
+    if (!this.getSettings()) {
+      this.setSettings(MovementSettingsData.defaultSettings);
+    }
+  }
+
+  static get defaultSettings() {
+    return {
+      blockMouseMovement: false,
+    };
   }
 
   getSettings() {
     return this.#scene.getFlag(CONSTANTS.SCOPE, CONSTANTS.FLAGS.SETTINGS);
+  }
+
+  setSettings(settings) {
+    this.#scene.setFlag(CONSTANTS.SCOPE, CONSTANTS.FLAGS.SETTINGS, settings);
   }
 
   updateSettings(partialSettings) {
