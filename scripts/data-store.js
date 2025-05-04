@@ -20,19 +20,23 @@ export class MovementSettingsData {
     return this.#scene.getFlag(CONSTANTS.SCOPE, CONSTANTS.FLAGS.SETTINGS);
   }
 
-  setSettings(settings) {
-    this.#scene.setFlag(CONSTANTS.SCOPE, CONSTANTS.FLAGS.SETTINGS, settings);
+  async setSettings(settings) {
+    await this.#scene.setFlag(
+      CONSTANTS.SCOPE,
+      CONSTANTS.FLAGS.SETTINGS,
+      settings
+    );
   }
 
-  updateSettings(partialSettings) {
+  async updateSettings(partialSettings) {
     const settings = this.getSettings();
-    this.#scene.setFlag(CONSTANTS.SCOPE, CONSTANTS.FLAGS.SETTINGS, {
+    await this.#scene.setFlag(CONSTANTS.SCOPE, CONSTANTS.FLAGS.SETTINGS, {
       ...settings,
       ...partialSettings,
     });
   }
 
-  deleteSettings() {
-    this.#scene.unsetFlag(CONSTANTS.SCOPE, CONSTANTS.FLAGS.SETTINGS);
+  async deleteSettings() {
+    await this.#scene.unsetFlag(CONSTANTS.SCOPE, CONSTANTS.FLAGS.SETTINGS);
   }
 }
