@@ -2,7 +2,7 @@ import { MovementSettingsData } from "./data-store.js";
 
 const dataStoresMap = new Map();
 
-Hooks.on("getSceneContext", (_, contextOptions) => {
+Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
   contextOptions.push({
     name: "Configure Movement",
     icon: "<i class='fas fa-cogs fa-fw' />",
