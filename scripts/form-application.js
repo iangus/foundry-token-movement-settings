@@ -7,6 +7,7 @@ export class MovementSettingsConfig extends FormApplication {
       id: "movement-settings",
       template: CONSTANTS.TEMPLATE,
       title: "Scene Movement Settings",
+      closeOnSubmit: false,
       settingsData: null,
     };
 
@@ -23,5 +24,12 @@ export class MovementSettingsConfig extends FormApplication {
    */
   getData(options) {
     return options.settingsData.getSettings();
+  }
+
+  /**
+   * @override
+   */
+  async _updateObject(_, formData) {
+    console.log(formData);
   }
 }
