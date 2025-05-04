@@ -5,11 +5,11 @@ const dataStoresMap = new Map();
 Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
   contextOptions.push({
     name: "Configure Movement",
-    icon: "<i class='fas fa-cogs fa-fw' />",
+    icon: "<i class='fas fa-cogs fa-fw'></i>",
     classes: "",
     group: "",
     callback: (...args) => console.log("Configure Movement", args),
-    condition: true,
+    condition: game.user.isGM,
   });
 });
 
