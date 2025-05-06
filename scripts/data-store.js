@@ -5,8 +5,20 @@ export class MovementSettingsData {
 
   constructor(scene) {
     this.#scene = scene;
-    if (!this.getSettings()) {
+    const existingSettings = this.getSettings();
+    if (!existingSettings) {
       this.setSettings(MovementSettingsData.defaultSettings);
+    } else {
+      const missingSettings = Object.keys(MovementSettingsData.defaultSettings)
+        .filter((key) => existingSettings[key] === undefined)
+        .reduce(
+          (obj, key) => (obj[key] = MovementSettingsData.defaultSettings[key]),
+          {}
+        );
+
+      if (Object.keys(missingSettings).length > 0) {
+        this.updateSettings(missingSettings);
+      }
     }
   }
 
