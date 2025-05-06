@@ -37,7 +37,7 @@
     "scripts/get-shifted-point-wrapper.js"
   ],
   "scripts": [],
-  "styles": [],
+  "styles": ["styles/movement-settings.css"],
   "languages": [
     {
       "lang": "en",

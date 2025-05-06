@@ -1,5 +1,5 @@
 <form class="flexcol" style="gap: 0.5rem;">
-  <div class="flexrow" style="align-items: center;">
+  <div class="movement-config-row">
     <label for="blockMouseMovement">Block Mouse Click/Drag Token Movement</label>
     <input
       type="checkbox"
@@ -7,8 +7,8 @@
       {{checked blockMouseMovement}}
     />
   </div>
-  {{! TODO we should DRY up these styles }}
-  <div class="flexrow" style="align-items: center;">
+  <div class="movement-config-row">
+    {{! TODO the labels bunch up weird }}
     <label for="gridlessMovementModifier">Gridless Movement Modifier</label>
     <input
       type="number"
