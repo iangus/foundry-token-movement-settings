@@ -43,7 +43,7 @@ export class MovementSettingsConfig extends FormApplication {
     if (options.settingsData) {
       // Foundry mergeObject util tries to merge settings data instances
       // Handle the override so we can keep separate instances for each scene intact
-      this.options.settingsData = settingsData;
+      this.options.settingsData = options.settingsData;
       delete options.settingsData;
     }
     return super._render(force, options);
