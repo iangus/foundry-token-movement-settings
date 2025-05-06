@@ -62,4 +62,3 @@ Hooks.on("deleteScene", (scene) => {
 
 // TODO figure out how to modify how much a token moves when using arrow keys
 // TODO override grid.getShiftedPoint to calculate the movement relative to grid size
-// TODO allow movement outside grid-snapping? is this how gridless works already? Look into why gridless can sometimes move the player into wierd positions
