@@ -1,5 +1,6 @@
 import { MovementSettingsData } from "./data-store.js";
 import { MovementSettingsConfig } from "./form-application.js";
+import { canDragWrapperFactory } from "./can-drag-wrapper.js";
 
 const dataStoresMap = new Map();
 let settingsConfigForm;
@@ -33,6 +34,19 @@ Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
 });
 
 Hooks.on("ready", () => {
+  if (game.modules.get("lib-wrapper")?.active) {
+    libWrapper.register(
+      "token-movement-settings",
+      "Token.prototype._canDrag",
+      canDragWrapperFactory(dataStoresMap),
+      "WRAPPER"
+    );
+  } else if (game.user.isGM) {
+    ui.notifications.error(
+      "Module token-movement-settings requires the 'libWrapper' module. Please install and activate it."
+    );
+  }
+
   game.scenes.forEach((scene) =>
     dataStoresMap.set(scene.id, new MovementSettingsData(scene))
   );
