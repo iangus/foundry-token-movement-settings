@@ -11,10 +11,10 @@ export class MovementSettingsData {
     } else {
       const missingSettings = Object.keys(MovementSettingsData.defaultSettings)
         .filter((key) => existingSettings[key] === undefined)
-        .reduce(
-          (obj, key) => (obj[key] = MovementSettingsData.defaultSettings[key]),
-          {}
-        );
+        .reduce((obj, key) => {
+          obj[key] = MovementSettingsData.defaultSettings[key];
+          return obj;
+        }, {});
 
       if (Object.keys(missingSettings).length > 0) {
         this.updateSettings(missingSettings);
