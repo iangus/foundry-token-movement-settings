@@ -66,6 +66,3 @@ Hooks.on("createScene", (scene) => {
 Hooks.on("deleteScene", (scene) => {
   dataStoresMap.delete(scene.id);
 });
-
-// TODO figure out how to modify how much a token moves when using arrow keys
-// TODO override grid.getShiftedPoint to calculate the movement relative to grid size
