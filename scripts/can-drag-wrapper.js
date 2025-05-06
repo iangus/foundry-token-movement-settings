@@ -12,6 +12,9 @@ export function canDragWrapperFactory(movementSettingsMap) {
         return canDrag;
       }
 
+      ui.notifications.warn(
+        "Token drag movement is disabled in this scene. Use the arrow keys to move."
+      );
       return false;
     } catch (e) {
       console.error("Error checking token movement settings", e);
