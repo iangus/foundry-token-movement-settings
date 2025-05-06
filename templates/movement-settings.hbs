@@ -1,11 +1,12 @@
-<form>
-  <label for="blockMouseMovement">Block Mouse Click/Drag Token Movement</label>
-  <input
-    type="checkbox"
-    name="blockMouseMovement"
-    {{checked blockMouseMovement}}
-  />
+<form class="flexcol" style="gap: 0.5rem;">
+  <div class="flexrow" style="align-items: center;">
+    <label for="blockMouseMovement">Block Mouse Click/Drag Token Movement</label>
+    <input
+      type="checkbox"
+      name="blockMouseMovement"
+      {{checked blockMouseMovement}}
+    />
+  </div>
 
-  {{! TODO need to fix spacing here }}
   <button type="submit"><i class="far fa-save"></i> Save Changes</button>
 </form>

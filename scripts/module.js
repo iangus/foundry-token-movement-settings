@@ -12,7 +12,7 @@ Hooks.on("init", () => {
 Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
   contextOptions.push({
     name: "Configure Movement",
-    icon: "<i class='fas fa-cogs fa-fw'></i>",
+    icon: "<i class='fa-solid fa-shoe-prints fa-fw'></i>",
     classes: "",
     group: "",
     callback: (target) => {
@@ -60,7 +60,6 @@ Hooks.on("deleteScene", (scene) => {
   dataStoresMap.delete(scene.id);
 });
 
-// TODO Use libWrapper to override Token._canDrag based on configured scene setting
 // TODO figure out how to modify how much a token moves when using arrow keys
 // TODO override grid.getShiftedPoint to calculate the movement relative to grid size
 // TODO allow movement outside grid-snapping? is this how gridless works already? Look into why gridless can sometimes move the player into wierd positions
