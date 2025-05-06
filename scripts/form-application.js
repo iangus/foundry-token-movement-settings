@@ -31,6 +31,7 @@ export class MovementSettingsConfig extends FormApplication {
    */
   async _updateObject(_, formData) {
     await this.options.settingsData.updateSettings(formData);
+    ui.notifications.info("Token movement settings saved.");
 
     this.render();
   }
