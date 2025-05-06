@@ -6,7 +6,7 @@ export function canDragWrapperFactory(movementSettingsMap) {
         return canDrag;
       }
 
-      const sceneId = event.target.scene.id;
+      const sceneId = event.interactionData.object.scene.id;
       const sceneSettings = movementSettingsMap.get(sceneId)?.getSettings();
       if (!sceneSettings?.blockMouseMovement) {
         return canDrag;
