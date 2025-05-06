@@ -12,7 +12,7 @@ Hooks.on("init", () => {
 Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
   contextOptions.push({
     name: "Configure Movement",
-    icon: "<i class='fas fa-cogs fa-fw'></i>",
+    icon: "<i class='fa-solid fa-shoe-prints fa-fw'></i>",
     classes: "",
     group: "",
     callback: (target) => {
