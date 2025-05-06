@@ -12,6 +12,12 @@
 
 Adds additional scene settings to control the movement of tokens in the scene.
 
+## How to Use this Module
+
+When activated, the module adds a new option in the scene context menu. Right-click the scene you want to configure and select the `Configure Movement` option to open the configuration dialog.
+
+![Scene context menu showing the Configure Movement option at the bottom](assets/context-menu.png)
+
 ## Supported Settings
 
 - Block Mouse Click/Drag Token Movement
