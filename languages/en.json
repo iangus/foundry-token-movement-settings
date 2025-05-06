@@ -1,3 +1,9 @@
 {
-    "MODULE.hello": "hello"
+  "TOKEN-MOVEMENT-SETTINGS": {
+    "blockMouseMovementLabel": "Block Mouse Click/Drag Token Movement",
+    "gridlessMovementModifierLabel": "Gridless Movement Modifier",
+    "gridlessMovementModifierTooltip": "Multiplier for the gridless movement steps when using arrow keys. Gridless movement defaults to moving in increments of the grid-size.",
+    "saveChangesLabel": "Save Changes",
+    "configureMovementContextLabel": "Configure Movement"
+  }
 }

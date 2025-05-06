@@ -1,6 +1,8 @@
 <form class="flexcol" style="gap: 0.5rem;">
   <div class="movement-config-row">
-    <label for="blockMouseMovement">Block Mouse Click/Drag Token Movement</label>
+    <label for="blockMouseMovement">{{localize
+        "TOKEN-MOVEMENT-SETTINGS.blockMouseMovementLabel"
+      }}</label>
     <input
       type="checkbox"
       name="blockMouseMovement"
@@ -8,7 +10,9 @@
     />
   </div>
   <div class="movement-config-row">
-    <label for="gridlessMovementModifier">Gridless Movement Modifier</label>
+    <label for="gridlessMovementModifier">{{localize
+        "TOKEN-MOVEMENT-SETTINGS.gridlessMovementModifierLabel"
+      }}</label>
     <input
       class="flex-1"
       type="number"
@@ -19,9 +23,12 @@
     />
     <i
       class="fa-solid fa-circle-info"
-      data-tooltip="Multiplier for the gridless movement steps when using arrow keys. Gridless movement defaults to moving in increments of the grid-size."
+      data-tooltip="{{localize
+        'TOKEN-MOVEMENT-SETTINGS.gridlessMovementModifierTooltip'
+      }}"
     ></i>
   </div>
 
-  <button type="submit"><i class="far fa-save"></i> Save Changes</button>
+  <button type="submit"><i class="far fa-save"></i>
+    {{localize "TOKEN-MOVEMENT-SETTINGS.saveChangesLabel"}}</button>
 </form>

@@ -12,7 +12,9 @@ Hooks.on("init", () => {
 
 Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
   contextOptions.push({
-    name: "Configure Movement",
+    name: game.i18n.localize(
+      "TOKEN-MOVEMENT-SETTINGS.configureMovementContextLabel"
+    ),
     icon: "<i class='fa-solid fa-shoe-prints fa-fw'></i>",
     classes: "",
     group: "",
