@@ -1,6 +1,7 @@
 import { MovementSettingsData } from "./data-store.js";
 import { MovementSettingsConfig } from "./form-application.js";
 import { canDragWrapperFactory } from "./can-drag-wrapper.js";
+import { getShiftedPointWrapperFactory } from "./get-shifted-point-wrapper.js";
 
 const dataStoresMap = new Map();
 let settingsConfigForm;
@@ -39,6 +40,12 @@ Hooks.on("ready", () => {
       "token-movement-settings",
       "Token.prototype._canDrag",
       canDragWrapperFactory(dataStoresMap),
+      "WRAPPER"
+    );
+    libWrapper.register(
+      "token-movement-settings",
+      "GridlessGrid.prototype.getShiftedPoint",
+      getShiftedPointWrapperFactory(dataStoresMap),
       "WRAPPER"
     );
   } else if (game.user.isGM) {
