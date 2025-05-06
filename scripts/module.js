@@ -1,6 +1,7 @@
 import { MovementSettingsData } from "./data-store.js";
 import { MovementSettingsConfig } from "./form-application.js";
 import { canDragWrapperFactory } from "./can-drag-wrapper.js";
+import { getShiftedPointWrapperFactory } from "./get-shifted-point-wrapper.js";
 
 const dataStoresMap = new Map();
 let settingsConfigForm;
@@ -41,6 +42,12 @@ Hooks.on("ready", () => {
       canDragWrapperFactory(dataStoresMap),
       "WRAPPER"
     );
+    libWrapper.register(
+      "token-movement-settings",
+      "foundry.grid.GridlessGrid.prototype.getShiftedPoint",
+      getShiftedPointWrapperFactory(dataStoresMap),
+      "WRAPPER"
+    );
   } else if (game.user.isGM) {
     ui.notifications.error(
       "Module token-movement-settings requires the 'libWrapper' module. Please install and activate it."
@@ -59,7 +66,3 @@ Hooks.on("createScene", (scene) => {
 Hooks.on("deleteScene", (scene) => {
   dataStoresMap.delete(scene.id);
 });
-
-// TODO figure out how to modify how much a token moves when using arrow keys
-// TODO override grid.getShiftedPoint to calculate the movement relative to grid size
-// TODO allow movement outside grid-snapping? is this how gridless works already? Look into why gridless can sometimes move the player into wierd positions
