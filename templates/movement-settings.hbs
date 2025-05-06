@@ -10,7 +10,13 @@
   {{! TODO we should DRY up these styles }}
   <div class="flexrow" style="align-items: center;">
     <label for="gridlessMovementModifier">Gridless Movement Modifier</label>
-    <input type="number" name="gridlessMovementModifier" min="0" step="0.01" />
+    <input
+      type="number"
+      name="gridlessMovementModifier"
+      min="0"
+      step="0.01"
+      {{value gridlessMovementModifier}}
+    />
     <i
       class="fa-solid fa-circle-info"
       title="Multiplier for the gridless movement steps when using arrow keys. Gridless movement defaults to moving in increments of the grid-size."
