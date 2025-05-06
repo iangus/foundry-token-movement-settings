@@ -13,6 +13,7 @@ export class MovementSettingsData {
   static get defaultSettings() {
     return {
       blockMouseMovement: false,
+      gridlessMovementModifier: 1,
     };
   }
 
