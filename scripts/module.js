@@ -44,7 +44,7 @@ Hooks.on("ready", () => {
     );
     libWrapper.register(
       "token-movement-settings",
-      "GridlessGrid.prototype.getShiftedPoint",
+      "foundry.grid.GridlessGrid.prototype.getShiftedPoint",
       getShiftedPointWrapperFactory(dataStoresMap),
       "WRAPPER"
     );
