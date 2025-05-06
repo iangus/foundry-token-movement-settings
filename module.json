@@ -17,13 +17,23 @@
   ],
   "relationships": {
     "systems": [],
-    "requires": []
+    "requires": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "compatibility": {
+          "minimum": "1.0.0.0",
+          "verified": "1.13.2.0"
+        }
+      }
+    ]
   },
   "esmodules": [
     "scripts/module.js",
     "scripts/data-store.js",
     "scripts/constants.js",
-    "scripts/form-application.js"
+    "scripts/form-application.js",
+    "scripts/can-drag-wrapper.js"
   ],
   "scripts": [],
   "styles": [],
