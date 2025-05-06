@@ -33,7 +33,8 @@
     "scripts/data-store.js",
     "scripts/constants.js",
     "scripts/form-application.js",
-    "scripts/can-drag-wrapper.js"
+    "scripts/can-drag-wrapper.js",
+    "scripts/get-shifted-point-wrapper.js"
   ],
   "scripts": [],
   "styles": [],
