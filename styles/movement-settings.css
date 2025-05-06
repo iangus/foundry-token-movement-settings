@@ -9,7 +9,7 @@
   flex: 1 1 0;
 }
 
-[data-tooltip] {
+/* [data-tooltip] {
   position: relative;
 }
 
@@ -34,4 +34,4 @@
   opacity: 1;
   transform: translateY(0);
   transition-duration: 300ms;
-}
+} */
