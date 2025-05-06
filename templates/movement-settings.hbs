@@ -7,6 +7,15 @@
       {{checked blockMouseMovement}}
     />
   </div>
+  {{! TODO we should DRY up these styles }}
+  <div class="flexrow" style="align-items: center;">
+    <label for="gridlessMovementModifier">Gridless Movement Modifier</label>
+    <input type="number" name="gridlessMovementModifier" min="0" step="0.01" />
+    <i
+      class="fa-solid fa-circle-info"
+      title="Multiplier for the gridless movement steps when using arrow keys. Gridless movement defaults to moving in increments of the grid-size."
+    ></i>
+  </div>
 
   <button type="submit"><i class="far fa-save"></i> Save Changes</button>
 </form>
