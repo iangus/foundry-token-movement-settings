@@ -25,6 +25,7 @@ export class MovementSettingsData {
   static get defaultSettings() {
     return {
       blockMouseMovement: false,
+      allowCombatDragMovement: false,
       gridlessMovementModifier: 1,
     };
   }
