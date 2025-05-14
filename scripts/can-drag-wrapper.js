@@ -6,9 +6,19 @@ export function canDragWrapperFactory(movementSettingsMap) {
         return canDrag;
       }
 
-      const sceneId = event.interactionData.object.scene.id;
+      const token = event.interactionData.object;
+      const sceneId = token.scene.id;
       const sceneSettings = movementSettingsMap.get(sceneId)?.getSettings();
       if (!sceneSettings?.blockMouseMovement) {
+        return canDrag;
+      }
+
+      if (
+        sceneSettings?.allowCombatDragMovement &&
+        token.inCombat &&
+        token.combatant.combat.isActive &&
+        token.combatant.combat.started
+      ) {
         return canDrag;
       }
 
