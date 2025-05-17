@@ -46,6 +46,12 @@ Hooks.on("ready", () => {
     );
     libWrapper.register(
       "token-movement-settings",
+      "Token.prototype._canDragLeftStart",
+      canDragWrapperFactory(dataStoresMap),
+      "WRAPPER"
+    );
+    libWrapper.register(
+      "token-movement-settings",
       "foundry.grid.GridlessGrid.prototype.getShiftedPoint",
       getShiftedPointWrapperFactory(dataStoresMap),
       "WRAPPER"
