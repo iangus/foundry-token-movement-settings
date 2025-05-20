@@ -55,7 +55,7 @@ Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
 
       settingsConfigForm.render(true, { settingsData });
     },
-    condition: game.user.isGM,
+    condition: () => game.user.isGM,
   });
 });
 
