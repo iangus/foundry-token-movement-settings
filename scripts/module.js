@@ -60,8 +60,7 @@ Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
 });
 
 Hooks.on("ready", () => {
-  if (game.modules.get("lib-wrapper")?.active) {
-  } else if (game.user.isGM) {
+  if (!game.modules.get("lib-wrapper")?.active && game.user.isGM) {
     ui.notifications.error(
       "Module token-movement-settings requires the 'libWrapper' module. Please install and activate it."
     );
