@@ -8,6 +8,29 @@ let settingsConfigForm;
 
 Hooks.on("init", () => {
   settingsConfigForm = new MovementSettingsConfig();
+
+  try {
+    libWrapper.register(
+      "token-movement-settings",
+      "Token.prototype._canDrag",
+      canDragWrapperFactory(dataStoresMap),
+      "WRAPPER"
+    );
+    libWrapper.register(
+      "token-movement-settings",
+      "Token.prototype._canDragLeftStart",
+      canDragWrapperFactory(dataStoresMap),
+      "WRAPPER"
+    );
+    libWrapper.register(
+      "token-movement-settings",
+      "foundry.grid.GridlessGrid.prototype.getShiftedPoint",
+      getShiftedPointWrapperFactory(dataStoresMap),
+      "WRAPPER"
+    );
+  } catch (e) {
+    console.error("Failed to register function wrappers");
+  }
 });
 
 Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
@@ -38,24 +61,6 @@ Hooks.on("getSceneDirectoryEntryContext", (_, contextOptions) => {
 
 Hooks.on("ready", () => {
   if (game.modules.get("lib-wrapper")?.active) {
-    libWrapper.register(
-      "token-movement-settings",
-      "Token.prototype._canDrag",
-      canDragWrapperFactory(dataStoresMap),
-      "WRAPPER"
-    );
-    libWrapper.register(
-      "token-movement-settings",
-      "Token.prototype._canDragLeftStart",
-      canDragWrapperFactory(dataStoresMap),
-      "WRAPPER"
-    );
-    libWrapper.register(
-      "token-movement-settings",
-      "foundry.grid.GridlessGrid.prototype.getShiftedPoint",
-      getShiftedPointWrapperFactory(dataStoresMap),
-      "WRAPPER"
-    );
   } else if (game.user.isGM) {
     ui.notifications.error(
       "Module token-movement-settings requires the 'libWrapper' module. Please install and activate it."
